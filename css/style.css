@@ -15,7 +15,7 @@
         }
         .logo {
             font-size: 2rem;
-            letter-spacing: 2px;    
+            letter-spacing: 2px;   
         }
         .nav-btn {
             color: #c8dfe0;
@@ -43,10 +43,10 @@
             color: #c8dfe0;
         }
         p {
-            font-size: 18px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+            font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
             color: #c8dfe0;
-            line-height: 2;
+            line-height: 1.5;
         }
         .section-one,
         .section-two,
@@ -58,22 +58,9 @@
             position: relative;
             overflow: hidden;
         }
-
-        #rain-canvas,
-        #ripple-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
         .section-two .col-left,
         .section-two .col-right {
             position: relative;
-            z-index: 1;
         }
         .section-one,
         .section-two {
@@ -82,21 +69,10 @@
             position: relative;
             overflow: hidden;
         }
-
-        #particles-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
         .col-left {
             flex: 1;
             text-align: left;
             position: relative;
-            z-index: 1;
         }
         .col-right {
             flex: 1;
@@ -104,7 +80,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            z-index: 1;
+
         }
         a {
             color: #db9065;
@@ -152,7 +128,8 @@
             padding: 8px 12px;
             width: 260px;
         }
-        input::placeholder {
+        input::placeholder,
+        .message::placeholder {
             color: #6e7d80;
         }
         .message {
@@ -167,13 +144,7 @@
             resize: vertical;
             box-sizing: border-box;
         }
-        .message::placeholder {
-            color: #6e7d80;
-        }
-        .message:focus {
-            outline: none;
-            border-color: #db9065;
-        }
+        .message:focus,
         input:focus {
             outline: none;
             border-color: #db9065;
