@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarati Bajracharya</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <span class="logo">Portfolio</span>
+        <nav>
+            <span class="nav">
+            <a href="#top" class="nav-btn">About me</a>
+            <a href="#skills" class="nav-btn">Skills</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+            </span>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Section 1: About me + h1 + profile pic -->
+        <section class="section-one" id="top">
+            <canvas id="particles-canvas"></canvas>
+            <div class="col-left">
+                <h2><u>About me</u></h2>
+                <p>
+                    Hi, I'm Aarati Bajracharya — a developer passionate about building clean,
+                    user-friendly web experiences. I enjoy learning new technologies and turning
+                    ideas into real projects. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                    aliquam magni. Iure expedita accusantium repellat repudiandae repellendus nam corporis,
+                    provident et eveniet illum dolore alias, quaerat harum eos assumenda cum?Lorem ipsum dolor
+                    sit amet, consectetur adipisicing elit. Temporibus quia quas, magnam dolores totam corporis?
+                    Rerum repudiandae odit eligendi, facilis possimus a laudantium mollitia deleniti beatae labore
+                    magni, quam cum.
+                </p>
+            </div>
+            <div class="col-right">
+                <h1>Aarati Bajracharya</h1>
+                <img src="profile-pic.jpg" alt="Photo of Aarati Bajracharya" class="profile-pic">
+            </div>
+        </section>
+
+        <!-- Section 2: Second image + skills -->
+        <section class="section-two">
+            <canvas id="rain-canvas"></canvas>
+            <canvas id="ripple-canvas"></canvas>
+            <div class="col-left">
+                <img src="me.jpg" alt="Second photo" class="side-pic">
+            </div>
+            <div class="col-right">
+                <h2 id="skills"><u>Skills</u></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML & CSS</td>
+                            <td>Beginner</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Beginner</td>
+                        </tr>
+                        <tr>
+                            <td>Git & GitHub</td>
+                            <td>Beginner</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+        </section>
+
+        <!-- section 3 is contact and form-->
+
+        <section class="section-three">
+            <canvas id="rain-canvas"></canvas>
+            <div id="contact">
+                    <h2><u>Contact Me</u></h2>
+                    <form>
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="text">Your Message</label>
+                            <textarea id="message" name="message" class="message" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <br>
+                        <button type="submit">Submit</button>
+                    </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aarati Bajracharya</p>
+    </footer>
+
+    <script>
+        function initParticles(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            const section = canvas.parentElement;
+
+            function resize() {
+                canvas.width = section.offsetWidth;
+                canvas.height = section.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const particles = Array.from({ length: 80 }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 3 + 1,
+                dx: (Math.random() - 0.5) * 0.6,
+                dy: -(Math.random() * 0.5 + 0.2),
+                alpha: Math.random() * 0.5 + 0.2,
+                color: ['#db9065', '#c8dfe0', '#7ec8cc'][Math.floor(Math.random() * 3)]
+            }));
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = p.alpha;
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = p.color;
+                    ctx.fill();
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+                    if (p.x < -10) p.x = canvas.width + 10;
+                    if (p.x > canvas.width + 10) p.x = -10;
+                });
+                ctx.globalAlpha = 1;
+                ctx.shadowBlur = 0;
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        initParticles('particles-canvas');
+
+        (function initRain() {
+            const canvas = document.getElementById('rain-canvas');
+            const ctx = canvas.getContext('2d');
+            const section = canvas.parentElement;
+
+            function resize() {
+                canvas.width = section.offsetWidth;
+                canvas.height = section.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const COLORS = ['#c8dfe0', '#7ec8cc', '#db9065'];
+            const drops = Array.from({ length: 80 }, () => ({
+                x: Math.random(),
+                y: Math.random(),
+                len: Math.random() * 18 + 8,
+                speed: Math.random() * 2.5 + 1,
+                alpha: Math.random() * 0.25 + 0.08,
+                color: COLORS[Math.floor(Math.random() * COLORS.length)]
+            }));
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drops.forEach(d => {
+                    const x = d.x * canvas.width;
+                    const y = d.y * canvas.height;
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(x, y + d.len);
+                    ctx.strokeStyle = d.color;
+                    ctx.globalAlpha = d.alpha;
+                    ctx.lineWidth = 1;
+                    ctx.shadowBlur = 4;
+                    ctx.shadowColor = d.color;
+                    ctx.stroke();
+                    d.y += d.speed / canvas.height;
+                    if (d.y > 1 + d.len / canvas.height) {
+                        d.y = -d.len / canvas.height;
+                        d.x = Math.random();
+                    }
+                });
+                ctx.globalAlpha = 1;
+                ctx.shadowBlur = 0;
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        (function initRipples() {
+            const canvas = document.getElementById('ripple-canvas');
+            const ctx = canvas.getContext('2d');
+            const section = canvas.parentElement;
+
+            function resize() {
+                canvas.width = section.offsetWidth;
+                canvas.height = section.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const COLORS = ['#c8dfe0', '#7ec8cc', '#db9065'];
+            const ripples = [];
+
+            function spawnRipple() {
+                ripples.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: 0,
+                    maxR: Math.random() * 80 + 40,
+                    alpha: 0.35,
+                    color: COLORS[Math.floor(Math.random() * COLORS.length)]
+                });
+            }
+
+            let spawnTimer = 0;
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                spawnTimer++;
+                if (spawnTimer % 40 === 0) spawnRipple();
+
+                for (let i = ripples.length - 1; i >= 0; i--) {
+                    const rip = ripples[i];
+                    rip.r += 0.8;
+                    rip.alpha -= 0.35 / (rip.maxR / 0.8);
+                    if (rip.alpha <= 0) { ripples.splice(i, 1); continue; }
+                    ctx.beginPath();
+                    ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
+                    ctx.strokeStyle = rip.color;
+                    ctx.globalAlpha = rip.alpha;
+                    ctx.lineWidth = 1.5;
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = rip.color;
+                    ctx.stroke();
+                }
+                ctx.globalAlpha = 1;
+                ctx.shadowBlur = 0;
+                requestAnimationFrame(draw);
+            }
+            spawnRipple();
+            draw();
+        })();
+    </script>
+</body>
+</html>
