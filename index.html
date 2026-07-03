@@ -1,101 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarati Bajracharya</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <header>
         <span class="logo">Portfolio</span>
         <nav>
             <span class="nav">
-            <a href="#top" class="nav-btn">About me</a>
-            <a href="#skills" class="nav-btn">Skills</a>
-            <a href="#contact" class="nav-btn">Contact</a>
+                <a href="#top" class="nav-btn">About me</a>
+                <a href="#skills" class="nav-btn">Skills</a>
+                <a href="#contact" class="nav-btn">Contact</a>
             </span>
         </nav>
     </header>
 
     <main>
-         
+
         <!-- Section 1: About me + profile pic -->
         <section class="section-one" id="top">
             <div class="col-left">
                 <h2><u>About me</u></h2>
                 <h1> Hi, I'm Aarati Bajracharya </h1>
                 <p>
-                    — a developer passionate about building clean,
+                    — a learner passionate about building clean,
                     user-friendly web experiences. I'm early in my journey with HTML, CSS,
                     JavaScript, and Git, and I love the process of turning an idea into
                     something you can actually click through in a browser. This portfolio
                     is itself a project I'm building and improving as I learn, one section
                     at a time. I'm curious, detail-oriented, and always looking for the next
-                    small challenge that teaches me something new. 
+                    small challenge that teaches me something new.
                 </p>
             </div>
             <div class="col-right">
-                <img src="profile-pic.jpg" alt="Photo of Aarati Bajracharya" class="profile-pic">
+                <img src="images/profile-pic.jpg" alt="Photo of Aarati Bajracharya" class="profile-pic">
             </div>
         </section>
 
-        <!-- Section 2: Second image + skills -->
+        <!-- Section 2:skills -->
         <section class="section-two">
-            <div class="col-left">
-                <img src="me.jpg" alt="Second photo" class="side-pic">
+            <h2><u>Skills</u></h2>
+            <div class="skill-section">
+                <div class="Skill-card">
+                    <img src="images/html-icon.png" alt="html icon" class="icons">
+                    <h2 class= "skill-text">HTML</h2>
+                </div>
+                <div class="Skill-card">
+                    <img src="images/css-icon.png" alt="css icon" class="icons">
+                    <h2 class= "skill-text">CSS</h2>
+                </div>
+                <div class="Skill-card">
+                    <img src="images/git-icon.png" alt="git icon" class="icons">
+                    <h2 class= "skill-text">Git</h2>
+                </div>
             </div>
-            <div class="col-right">
-                <h2 id="skills"><u>Skills</u></h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Level</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>HTML & CSS</td>
-                            <td>Beginner</td>
-                        </tr>
-                        <tr>
-                            <td>JavaScript</td>
-                            <td>Beginner</td>
-                        </tr>
-                        <tr>
-                            <td>Git & GitHub</td>
-                            <td>Beginner</td>
-                        </tr>
-                    </tbody>
-                </table>
-             </div>
         </section>
 
         <!-- section 3 is contact and form-->
 
         <section class="section-three">
             <div id="contact">
-                    <h2><u>Contact Me</u></h2>
-                    <form>
-                        <div>
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <br>
-                        <div>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                        <br>
-                        <div>
-                            <label for="text">Your Message</label>
-                            <textarea id="message" name="message" class="message" placeholder="Type your message here..." required></textarea>
-                        </div>
-                        <br>
-                        <button type="submit">Submit</button>
-                    </form>
+                <h2><u>Contact Me</u></h2>
+                <form>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="text">Your Message</label>
+                        <textarea id="message" name="message" class="message" placeholder="Type your message here..."
+                            required></textarea>
+                    </div>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </section>
 
@@ -105,4 +95,5 @@
         <p>&copy; 2026 Aarati Bajracharya</p>
     </footer>
 </body>
+
 </html>
