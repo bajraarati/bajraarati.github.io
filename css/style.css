@@ -22,7 +22,8 @@
 
  .nav-btn {
      color: #c8dfe0;
-     text-decoration: none;
+     text-decoration: underline;
+     text-decoration-color: #db9065;
      border: none;
      padding: 6px 18px;
      font-size: 20px;
@@ -96,7 +97,7 @@
  }
 
  .skill-section {
-     height: 400px;
+     height: 350px;
      background-color: #1e3539;
      border-radius: 10px;
      display: flex;
@@ -107,21 +108,25 @@
  }
 
  .Skill-card {
-     width: 180;
+     width: 160px;
      border-radius: 10px;
      background-color: #c8dfe0;
      padding: 10px;
      display: flex;
      flex-direction: column;
+     align-items: center;
  }
 
  .skill-text { 
     color:#db9065;
+   text-align:center;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  }
  
  .icons {
-     height: 120px;
+     height: 100px;
      aspect-ratio:inherit;
+     
  }
 
  .section-three {
