@@ -3,6 +3,8 @@ body {
     color: #f9fafb
 }
 
+/*Header, logo and Nav */
+
 header {
     display: flex;
     flex-wrap: wrap;
@@ -20,16 +22,20 @@ header {
 }
 
 .logo {
-    font-size: 1;
+    font-size: 1.4rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 2px;
+}
+
+.skyline-logo {
+    width: 180px;
 }
 
 .nav-btn {
     color: #f9fafb;
     text-decoration: none;
     padding: 20px;
-    font-size: 1;
+    font-size: 1rem;
     font-weight: bold;
     display: inline-block;
     transform: translateY(0);
@@ -41,6 +47,7 @@ header {
     color: #059669;
 }
 
+/*Section 1 - Hero image and text  */
 main {
     padding: 10px;
 }
@@ -84,6 +91,7 @@ h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Section 2 - places visited, view all button and about berlin section */
 h3 {
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -96,21 +104,21 @@ h3 {
 .places-header {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     margin-bottom: 10px;
 }
 
 .places-header h3 {
-    font-size: 1;
+    font-size: 1.1rem;
     letter-spacing: 1px;
     position: relative;
     padding-bottom: 10px;
 }
 
 .view-all-btn {
-    position: absolute;
-    right: 0;
     color: #1f2937;
     font-weight: bold;
     font-size: 0.85rem;
@@ -127,8 +135,29 @@ h3 {
 
 .places-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .places-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .places-header {
+        justify-content: space-between;
+    }
+
+    .view-all-btn {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .places-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .place-card {
@@ -152,7 +181,7 @@ h3 {
 .place-info {
     padding: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1f2937;
+    color: #305080;
 }
 
 .place-location {

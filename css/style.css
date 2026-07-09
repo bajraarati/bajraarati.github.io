@@ -117,16 +117,16 @@
      align-items: center;
  }
 
- .skill-text { 
-    color:#db9065;
-   text-align:center;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ .skill-text {
+     color: #db9065;
+     text-align: center;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  }
- 
+
  .icons {
      height: 100px;
-     aspect-ratio:inherit;
-     
+     aspect-ratio: inherit;
+
  }
 
  .section-three {
@@ -232,4 +232,70 @@
      transform: scale(1.05);
      border-color: #db9065;
      outline-color: #c8dfe0;
+ }
+
+ @media (min-width: 1000px) {
+     .profile-pic {
+         width: 400px;
+         height: 400px;
+     }
+
+     p {
+         font-size: 20px
+     }
+ }
+
+ @media (max-width: 768px) {
+
+     .section-one,
+     .section-three {
+         flex-direction: column;
+         align-items: center;
+         gap: 24px;
+         text-align: center;
+     }
+
+     .col-left {
+         text-align: center;
+     }
+
+     .skill-section {
+         height: auto;
+         flex-wrap: wrap;
+         padding: 20px;
+     }
+
+     #contact {
+         width: 90%;
+     }
+
+     form {
+         display: block;
+         width: 100%;
+     }
+
+     input {
+         width: 100%;
+         box-sizing: border-box;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .profile-pic {
+         width: 200px;
+         height: 200px;
+     }
+
+     .Skill-card {
+         width: 130px;
+     }
+
+     .logo {
+         font-size: 1.5rem;
+     }
+
+     .nav-btn {
+         padding: 10px;
+         font-size: 16px;
+     }
  }
