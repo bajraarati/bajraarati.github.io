@@ -69,7 +69,8 @@
  }
 
  .section-one,
- .section-skill {
+ .section-skill,
+ .section-my-learnings {
      border-bottom: 2px solid #335a61;
      margin-bottom: 20px;
      padding-bottom: 20px;
@@ -127,6 +128,24 @@
      height: 100px;
      aspect-ratio: inherit;
 
+ }
+
+ .learnings-card {
+     width: 200px;
+     height: 100px;
+     border-radius: 10px;
+     background-color: #1e3539;
+     padding: 10px;
+     text-align: center;
+ }
+
+ .learnings-card h2 {
+     color: #db9065;
+     text-align: center;
+ }
+
+ .my-learnings:hover {
+     opacity: 0.85;
  }
 
  .section-contact-me {
