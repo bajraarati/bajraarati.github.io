@@ -1,6 +1,7 @@
-body{
-    background-color:#f5ebe0;
+body {
+    background-color: #f5ebe0;
 }
+
 /*Header, logo and Nav */
 
 header {
@@ -130,27 +131,6 @@ h3 {
     gap: 20px;
 }
 
-@media (min-width: 600px) {
-    .places-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .places-header {
-        justify-content: space-between;
-    }
-
-    .view-all-btn {
-        position: absolute;
-        right: 0;
-    }
-}
-
-@media (min-width: 1024px) {
-    .places-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
 .place-card {
     background-color: #ffffff;
     border-radius: 0.75em;
@@ -190,8 +170,34 @@ h3 {
     line-height: 1.4;
 }
 
+/* Section Photos Gallery */
+
+
+/* For Font family */
 .lobster-two-bold {
     font-family: "Lobster Two", sans-serif;
     font-weight: 700;
     font-style: normal;
+}
+
+/* For responsiveness */
+@media (min-width: 600px) {
+    .places-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .places-header {
+        justify-content: space-between;
+    }
+
+    .view-all-btn {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .places-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
