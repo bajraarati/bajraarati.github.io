@@ -1,6 +1,7 @@
  body {
      background-color: #28464B;
      color: #c8dfe0;
+     margin: 0px;
  }
 
  header {
@@ -37,10 +38,6 @@
  .nav-btn:hover {
      transform: translateY(-5px);
      color: #db9065;
- }
-
- main {
-     padding: 20px;
  }
 
  h1 {
@@ -137,6 +134,8 @@
      background-color: #1e3539;
      padding: 10px;
      text-align: center;
+     margin: 20px;
+     align-items: ;
  }
 
  .learnings-card h2 {
